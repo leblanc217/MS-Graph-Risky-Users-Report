@@ -40,7 +40,7 @@ Function CreateINC($upn)
 
 #Process risky users
 Function ProcessData() {   
-	#setup email body
+    #setup email body
     $body = "<h3>Azure Security Report For "+(Get-Date).ToLongDateString()+":</h3>"
     $encodedapilink = 'https://graph.microsoft.com/v1.0/identityProtection/riskDetections?$orderby=detectedDateTime desc&$filter=riskLevel eq ' + "'high'" + "and detectedDateTime ge $lastweek"
 
@@ -48,7 +48,7 @@ Function ProcessData() {
     {
         #Uncomment for live data, otherwise will use exported test data
         $data = Invoke-RestMethod -Uri $encodedapilink -Headers $Headers | Select '@odata.context','@odata.nextLink',value         
-		#$data = Import-Clixml  '.\TestData(LEARNING).xml'
+	#$data = Import-Clixml  '.\TestData(LEARNING).xml'
         
         foreach($alert in $data.value)
         {       
