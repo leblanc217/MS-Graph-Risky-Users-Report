@@ -1,0 +1,2188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="SaaS.Services" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="SaaS.Services" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="SaaS.Services">
+      <s:element name="GetCategories">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenantId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCategoriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCategoriesResult" type="tns:FRSHEATGetCategoriesResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FRSHEATGetCategoriesResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="exceptionReason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="srCategories" type="tns:ArrayOfFRSHEATServiceReqCategory" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFRSHEATServiceReqCategory">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FRSHEATServiceReqCategory" nillable="true" type="tns:FRSHEATServiceReqCategory" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FRSHEATServiceReqCategory">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strRecId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strDescription" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAllTemplates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenantId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllTemplatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllTemplatesResult" type="tns:FRSHEATGetTemplatesResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FRSHEATGetTemplatesResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="exceptionReason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="srtList" type="tns:ArrayOfFRSHEATServiceReqTemplateListItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFRSHEATServiceReqTemplateListItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FRSHEATServiceReqTemplateListItem" nillable="true" type="tns:FRSHEATServiceReqTemplateListItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FRSHEATServiceReqTemplateListItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strRecId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strItem" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strSubscriptionId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strIconName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCategoryTemplates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenantId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="categoryid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="searchString" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="maxCount" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCategoryTemplatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCategoryTemplatesResult" type="tns:FRSHEATGetTemplatesResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSubscriptionId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenantId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSubscriptionIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSubscriptionIdResult" type="tns:FRSHEATGetSubscriptionIdResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FRSHEATGetSubscriptionIdResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="exceptionReason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="subscriptionId" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPackageData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenantId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSubscrRecId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPackageDataResult" type="tns:FRSHEATGetPackageDataResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FRSHEATGetPackageDataResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="exceptionReason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="srSubscription" type="tns:FRSHEATServiceReqSubscription" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FRSHEATServiceReqSubscription">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strSubscriptionRecId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strDateSubscribed" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strOrgUnitId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strItem" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strServiceName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strRecId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lstParameters" type="tns:ArrayOfFRSHEATServiceReqTemplateParam" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFRSHEATServiceReqTemplateParam">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FRSHEATServiceReqTemplateParam" nillable="true" type="tns:FRSHEATServiceReqTemplateParam" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FRSHEATServiceReqTemplateParam">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strLabel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="bAllowSelectByUser" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="bDBValidated" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="strRequiredExpression" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="isCalculated" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="autoFillOnlyWhenEmpty" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="strValidationListRecId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strValidationListTableRef" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="bIsHidden" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="strRecId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="validationConstraints" type="tns:ArrayOfValidationConstraint" />
+          <s:element minOccurs="0" maxOccurs="1" name="strValidationConstraints" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strAutoFillExpression" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="triggerFields" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="strTriggerFields" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strDefaultValue" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfValidationConstraint">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ValidationConstraint" nillable="true" type="tns:ValidationConstraint" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidationConstraint">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ConstraintFieldName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ConstraintFieldDisplay" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FormFieldRecId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FormFieldName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ConstraintBOName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ConstraintField" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ConstraintCondition" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UserCanAccessRequestOffering">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenantId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="loginId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reqOfferingName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserCanAccessRequestOfferingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserCanAccessRequestOfferingResult" type="tns:FRSHEATUserCanAccessReqOfferingResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FRSHEATUserCanAccessReqOfferingResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="exceptionReason" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="canAccess" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SubmitRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenantId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="subscriptionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="srparameters" type="tns:ArrayOfFRSHEATServiceReqParam" />
+            <s:element minOccurs="0" maxOccurs="1" name="loginId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfFRSHEATServiceReqParam">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FRSHEATServiceReqParam" nillable="true" type="tns:FRSHEATServiceReqParam" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FRSHEATServiceReqParam">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strValue" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SubmitRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SubmitRequestResult" type="tns:FRSHEATSubmitRequestResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FRSHEATSubmitRequestResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="exceptionReason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="reqData" type="tns:FRSHEATServiceReqRequest" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FRSHEATServiceReqRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strRequestRecId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strRequestNum" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="fTotalPrice" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="fTotalRecurPrice" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="strByEmployee" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strFulfillmentPlanType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strUrgency" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateSubmitted" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateUpdated" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="strUpdatedBy" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateDelivery" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="strSubscriptionRecId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="isFulfilled" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strItem" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strDescription" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="fPrice" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="fRecurPrice" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="nRecurPeriod" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="nDeliveryCommitment" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="strStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCreatedBy" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strRecId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lstParameters" type="tns:ArrayOfFRSHEATServiceReqTemplateParam" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetRequestData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenantId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strReqNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRequestDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRequestDataResult" type="tns:FRSHEATGetRequestDataResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FRSHEATGetRequestDataResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="exceptionReason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="reqData" type="tns:FRSHEATServiceReqRequest" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="FetchServiceReqValidationListData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenantId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="offeringName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paramName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="depvalItem" type="tns:FRSHEATDepValItem" />
+            <s:element minOccurs="0" maxOccurs="1" name="subStrMatch" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FRSHEATDepValItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strParName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strParValue" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="FetchServiceReqValidationListDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FetchServiceReqValidationListDataResult" type="tns:FRSHEATFetchSRValListDataResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FRSHEATFetchSRValListDataResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="exceptionReason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="validationValuesList" type="tns:ArrayOfFRSHEATValListValue" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFRSHEATValListValue">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FRSHEATValListValue" nillable="true" type="tns:FRSHEATValListValue" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FRSHEATValListValue">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strRecId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strStoredValue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strDisplayValue" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Search">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenantId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ObjectQuery" nillable="true" type="tns:ObjectQueryDefinition" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ObjectQueryDefinition">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="From" type="tns:FromClass" />
+          <s:element minOccurs="0" maxOccurs="1" name="Select" type="tns:SelectClass" />
+          <s:element minOccurs="0" maxOccurs="1" name="Where" type="tns:ArrayOfRuleClass" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupBy" type="tns:ArrayOfGroupByClass" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrderBy" type="tns:ArrayOfOrderByClass" />
+        </s:sequence>
+        <s:attribute name="Top" type="s:int" use="required" />
+        <s:attribute name="Distinct" type="s:boolean" use="required" />
+        <s:attribute name="PasswordFieldBehavior" type="tns:PasswordFieldBehavior" use="required" />
+      </s:complexType>
+      <s:complexType name="FromClass">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Links" type="tns:ArrayOfFromLinkClass" />
+        </s:sequence>
+        <s:attribute name="Object" type="s:string" />
+      </s:complexType>
+      <s:complexType name="ArrayOfFromLinkClass">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Link" type="tns:FromLinkClass" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FromLinkClass">
+        <s:attribute name="Relation" type="s:string" />
+        <s:attribute name="Object" type="s:string" />
+        <s:attribute name="As" type="s:string" />
+        <s:attribute name="JoinKind" type="s:string" />
+        <s:attribute name="RelationshipName" type="s:string" />
+      </s:complexType>
+      <s:complexType name="SelectClass">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Fields" type="tns:ArrayOfFieldClass" />
+        </s:sequence>
+        <s:attribute name="All" type="s:boolean" use="required" />
+      </s:complexType>
+      <s:complexType name="ArrayOfFieldClass">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Field" type="tns:FieldClass" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FieldClass">
+        <s:attribute name="Function" type="s:string" />
+        <s:attribute name="Name" type="s:string" />
+        <s:attribute name="As" type="s:string" />
+        <s:attribute name="Type" type="s:string" />
+      </s:complexType>
+      <s:complexType name="ArrayOfRuleClass">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Rule" type="tns:RuleClass" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RuleClass">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Rules" nillable="true" type="tns:ArrayOfRuleClass" />
+        </s:sequence>
+        <s:attribute name="ObjectId" type="s:string" />
+        <s:attribute name="ObjectDisplay" type="s:string" />
+        <s:attribute name="FieldName" type="s:string" />
+        <s:attribute name="FieldDisplay" type="s:string" />
+        <s:attribute name="FieldType" type="s:string" />
+        <s:attribute name="Required" type="s:boolean" use="required" />
+        <s:attribute name="ParamValue" type="s:string" />
+        <s:attribute name="ParamValueDisplay" type="s:string" />
+        <s:attribute name="Join" type="s:string" />
+        <s:attribute name="Condition" type="s:string" />
+        <s:attribute name="ConditionType" type="tns:SearchConditionType" use="required" />
+        <s:attribute name="As" type="s:string" />
+        <s:attribute name="Field" type="s:string" />
+        <s:attribute name="Value" type="s:string" />
+        <s:attribute name="ValueDisplay" type="s:string" />
+      </s:complexType>
+      <s:simpleType name="SearchConditionType">
+        <s:restriction base="s:string">
+          <s:enumeration value="ByField" />
+          <s:enumeration value="ByText" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfGroupByClass">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Field" type="tns:GroupByClass" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="GroupByClass">
+        <s:attribute name="Name" type="s:string" />
+        <s:attribute name="As" type="s:string" />
+      </s:complexType>
+      <s:complexType name="ArrayOfOrderByClass">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Field" type="tns:OrderByClass" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrderByClass">
+        <s:attribute name="Name" type="s:string" />
+        <s:attribute name="Direction" type="s:string" />
+      </s:complexType>
+      <s:simpleType name="PasswordFieldBehavior">
+        <s:restriction base="s:string">
+          <s:enumeration value="UI" />
+          <s:enumeration value="Services" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="SearchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchResult" type="tns:FRSHEATIntegrationSearchResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FRSHEATIntegrationSearchResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="exceptionReason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="objList" type="tns:ArrayOfArrayOfWebServiceBusinessObject" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfArrayOfWebServiceBusinessObject">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ArrayOfWebServiceBusinessObject" nillable="true" type="tns:ArrayOfWebServiceBusinessObject" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfWebServiceBusinessObject">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WebServiceBusinessObject" nillable="true" type="tns:WebServiceBusinessObject" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WebServiceBusinessObject">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RecID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Alias" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BusinessObjectName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TableRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FieldValues" type="tns:ArrayOfWebServiceFieldValue" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfWebServiceFieldValue">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WebServiceFieldValue" nillable="true" type="tns:WebServiceFieldValue" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WebServiceFieldValue">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SearchBySavedSearch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenantId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ObjectQuery" nillable="true" type="tns:ObjectQueryDefinition" />
+            <s:element minOccurs="0" maxOccurs="1" name="savedSearchId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchBySavedSearchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchBySavedSearchResult" type="tns:FRSHEATIntegrationSearchResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Connect">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenantId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="role" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FRSHEATIntegrationConnectionResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="connectionStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="exceptionReason" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConnectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConnectResult" type="tns:FRSHEATIntegrationConnectionResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Disconnect">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenantId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisconnectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DisconnectResult" type="tns:FRSHEATIntegrationConnectionResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthenticateUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenantId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FRSHEATIntegrationAuthenticationResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="authenticationStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="authenticationSessionKey" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="exceptionReason" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AuthenticateUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticateUserResult" type="tns:FRSHEATIntegrationAuthenticationResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindQuickActionByName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tenantId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BOType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="quickActionName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindQuickActionByNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FindQuickActionByNameResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthenticateTenantAPIKey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="apiKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenantId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthenticateTenantAPIKeyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticateTenantAPIKeyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRolesForUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenantId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FRSHEATIntegrationGetRolesResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="roleList" type="tns:ArrayOfNameDisplayPair" />
+          <s:element minOccurs="0" maxOccurs="1" name="exceptionReason" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfNameDisplayPair">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="NameDisplayPair" nillable="true" type="tns:NameDisplayPair" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="NameDisplayPair">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetRolesForUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRolesForUserResult" type="tns:FRSHEATIntegrationGetRolesResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetRoleForUserSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenantId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="roleName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FRSHEATIntegrationAuthorizationResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="authorizationStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="authorizationSessionKey" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="exceptionReason" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SetRoleForUserSessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetRoleForUserSessionResult" type="tns:FRSHEATIntegrationAuthorizationResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateObject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenantId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="commandData" type="tns:ObjectCommandData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ObjectCommandData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ObjectId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ObjectType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fields" type="tns:ArrayOfObjectCommandDataFieldValue" />
+          <s:element minOccurs="0" maxOccurs="1" name="LinkToExistent" type="tns:ArrayOfLinkEntry" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfObjectCommandDataFieldValue">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ObjectCommandDataFieldValue" nillable="true" type="tns:ObjectCommandDataFieldValue" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ObjectCommandDataFieldValue">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BinaryData" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="HtmlValue" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfLinkEntry">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="LinkEntry" nillable="true" type="tns:LinkEntry" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LinkEntry">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Action" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Relation" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RelatedObjectType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RelationshipName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RelatedObjectId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SearchCriteria" type="tns:ArrayOfSearchCondition" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSearchCondition">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SearchCondition" nillable="true" type="tns:SearchCondition" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SearchCondition">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ObjectId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ObjectDisplay" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="JoinRule" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Condition" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ConditionType" type="tns:SearchConditionType" />
+          <s:element minOccurs="0" maxOccurs="1" name="FieldName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FieldDisplay" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FieldAlias" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FieldType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FieldValue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FieldValueDisplay" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FieldValueBehavior" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FieldStartValue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FieldEndValue" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BracketLevel" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsClosingBracket" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsRelatedObjectQuery" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="RelatedObjectId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RelatedObjectDisplay" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RelatedObjectOp" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RelatedObjectCount" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="RelatedObjects" type="tns:ArrayOfSearchRelatedObjectInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="RelatedRelatedObjects" type="tns:ArrayOfSearchRelatedObjectInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="MasterObjectId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsRelatedObjectCondition" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="SubQuery" type="tns:ArrayOfSearchCondition" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSearchRelatedObjectInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SearchRelatedObjectInfo" nillable="true" type="tns:SearchRelatedObjectInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SearchRelatedObjectInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ObjectId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Style" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ThereCardinality" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FRSHEATIntegrationCreateBOResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="exceptionReason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="recId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:WebServiceBusinessObject" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateObjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateObjectResult" type="tns:FRSHEATIntegrationCreateBOResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteObject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenantId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="commandData" type="tns:ObjectCommandData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FRSHEATIntegrationDeleteBOResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="exceptionReason" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DeleteObjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteObjectResult" type="tns:FRSHEATIntegrationDeleteBOResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateObject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenantId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="commandData" type="tns:ObjectCommandData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FRSHEATIntegrationUpdateBOResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="exceptionReason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="recId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:WebServiceBusinessObject" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateObjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateObjectResult" type="tns:FRSHEATIntegrationUpdateBOResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpsertObject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenantId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="commandData" type="tns:ObjectCommandData" />
+            <s:element minOccurs="0" maxOccurs="1" name="searchFields" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FRSHEATIntegrationUpsertBOResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="exceptionReason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="recId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:WebServiceBusinessObject" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpsertObjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpsertObjectResult" type="tns:FRSHEATIntegrationUpsertBOResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddAttachment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenantId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="commandData" type="tns:ObjectAttachmentCommandData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ObjectAttachmentCommandData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ObjectId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ObjectType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="relationshipTag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="hostName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="URL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fileData" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FRSHEATIntegrationAddAttachmentResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="exceptionReason" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddAttachmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddAttachmentResult" type="tns:FRSHEATIntegrationAddAttachmentResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadAttachment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenantId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="commandData" type="tns:ObjectAttachmentCommandData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FRSHEATIntegrationReadAttachmentResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="exceptionReason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="attachmentData" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ReadAttachmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadAttachmentResult" type="tns:FRSHEATIntegrationReadAttachmentResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindBusinessObject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenantId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="boType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="recId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FRSHEATIntegrationFindBOResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="exceptionReason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:WebServiceBusinessObject" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="FindBusinessObjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FindBusinessObjectResult" type="tns:FRSHEATIntegrationFindBOResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindSingleBusinessObjectByField">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenantId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="boType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fieldName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fieldValue" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindSingleBusinessObjectByFieldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FindSingleBusinessObjectByFieldResult" type="tns:FRSHEATIntegrationFindBOResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindMultipleBusinessObjectsByField">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenantId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="boType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fieldName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fieldValue" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindMultipleBusinessObjectsByFieldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FindMultipleBusinessObjectsByFieldResult" type="tns:FRSHEATIntegrationSearchResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSchemaForObject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenantId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="objectName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSchemaForObjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSchemaForObjectResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllSchemaForObject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenantId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="objectName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllSchemaForObjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllSchemaForObjectResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllAllowedObjectNames">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenantId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllAllowedObjectNamesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllAllowedObjectNamesResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSavedSearches">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenantId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="objectId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="maxCount" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FRSHEATGetSavedSearchesResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="exceptionReason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="srtSavedSearches" type="tns:ArrayOfFRSHEATSavedSearchItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFRSHEATSavedSearchItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FRSHEATSavedSearchItem" nillable="true" type="tns:FRSHEATSavedSearchItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FRSHEATSavedSearchItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strRecId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCategoryName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strDescription" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetSavedSearchesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSavedSearchesResult" type="tns:FRSHEATGetSavedSearchesResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserNames">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenantId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nameStartsWith" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FRSHEATGetUsersResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="exceptionReason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="usersList" type="tns:ArrayOfNameDisplayPair" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetUserNamesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserNamesResult" type="tns:FRSHEATGetUsersResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRoles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenantId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nameStartsWith" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="languagePack" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FRSHEATGetRolesResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="exceptionReason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="rolesList" type="tns:ArrayOfNameDisplayPair" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetRolesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRolesResult" type="tns:FRSHEATGetRolesResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RebuildMetaDataIndex">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenantId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FRSHEATIntegrationRebuildMRIResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExceptionMsg" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TimeTaken" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RecordCount" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCount" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="IndexErrors" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RebuildMetaDataIndexResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RebuildMetaDataIndexResult" type="tns:FRSHEATIntegrationRebuildMRIResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IntegrationScheduleNow">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenantId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="integrationName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FRSHEATIntegrationScheduleNowResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="exceptionReason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="integrationQueueId" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IntegrationScheduleNowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IntegrationScheduleNowResult" type="tns:FRSHEATIntegrationScheduleNowResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetCategoriesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCategories" />
+  </wsdl:message>
+  <wsdl:message name="GetCategoriesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllTemplatesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllTemplates" />
+  </wsdl:message>
+  <wsdl:message name="GetAllTemplatesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllTemplatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCategoryTemplatesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCategoryTemplates" />
+  </wsdl:message>
+  <wsdl:message name="GetCategoryTemplatesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCategoryTemplatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSubscriptionIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSubscriptionId" />
+  </wsdl:message>
+  <wsdl:message name="GetSubscriptionIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSubscriptionIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPackageData" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPackageDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserCanAccessRequestOfferingSoapIn">
+    <wsdl:part name="parameters" element="tns:UserCanAccessRequestOffering" />
+  </wsdl:message>
+  <wsdl:message name="UserCanAccessRequestOfferingSoapOut">
+    <wsdl:part name="parameters" element="tns:UserCanAccessRequestOfferingResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubmitRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:SubmitRequest" />
+  </wsdl:message>
+  <wsdl:message name="SubmitRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:SubmitRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRequestDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRequestData" />
+  </wsdl:message>
+  <wsdl:message name="GetRequestDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRequestDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="FetchServiceReqValidationListDataSoapIn">
+    <wsdl:part name="parameters" element="tns:FetchServiceReqValidationListData" />
+  </wsdl:message>
+  <wsdl:message name="FetchServiceReqValidationListDataSoapOut">
+    <wsdl:part name="parameters" element="tns:FetchServiceReqValidationListDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchSoapIn">
+    <wsdl:part name="parameters" element="tns:Search" />
+  </wsdl:message>
+  <wsdl:message name="SearchSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchBySavedSearchSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchBySavedSearch" />
+  </wsdl:message>
+  <wsdl:message name="SearchBySavedSearchSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchBySavedSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConnectSoapIn">
+    <wsdl:part name="parameters" element="tns:Connect" />
+  </wsdl:message>
+  <wsdl:message name="ConnectSoapOut">
+    <wsdl:part name="parameters" element="tns:ConnectResponse" />
+  </wsdl:message>
+  <wsdl:message name="DisconnectSoapIn">
+    <wsdl:part name="parameters" element="tns:Disconnect" />
+  </wsdl:message>
+  <wsdl:message name="DisconnectSoapOut">
+    <wsdl:part name="parameters" element="tns:DisconnectResponse" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticateUserSoapIn">
+    <wsdl:part name="parameters" element="tns:AuthenticateUser" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticateUserSoapOut">
+    <wsdl:part name="parameters" element="tns:AuthenticateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="FindQuickActionByNameSoapIn">
+    <wsdl:part name="parameters" element="tns:FindQuickActionByName" />
+  </wsdl:message>
+  <wsdl:message name="FindQuickActionByNameSoapOut">
+    <wsdl:part name="parameters" element="tns:FindQuickActionByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticateTenantAPIKeySoapIn">
+    <wsdl:part name="parameters" element="tns:AuthenticateTenantAPIKey" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticateTenantAPIKeySoapOut">
+    <wsdl:part name="parameters" element="tns:AuthenticateTenantAPIKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRolesForUserSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRolesForUser" />
+  </wsdl:message>
+  <wsdl:message name="GetRolesForUserSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRolesForUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetRoleForUserSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:SetRoleForUserSession" />
+  </wsdl:message>
+  <wsdl:message name="SetRoleForUserSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:SetRoleForUserSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateObjectSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateObject" />
+  </wsdl:message>
+  <wsdl:message name="CreateObjectSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteObjectSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteObject" />
+  </wsdl:message>
+  <wsdl:message name="DeleteObjectSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateObjectSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateObject" />
+  </wsdl:message>
+  <wsdl:message name="UpdateObjectSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpsertObjectSoapIn">
+    <wsdl:part name="parameters" element="tns:UpsertObject" />
+  </wsdl:message>
+  <wsdl:message name="UpsertObjectSoapOut">
+    <wsdl:part name="parameters" element="tns:UpsertObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddAttachmentSoapIn">
+    <wsdl:part name="parameters" element="tns:AddAttachment" />
+  </wsdl:message>
+  <wsdl:message name="AddAttachmentSoapOut">
+    <wsdl:part name="parameters" element="tns:AddAttachmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadAttachmentSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadAttachment" />
+  </wsdl:message>
+  <wsdl:message name="ReadAttachmentSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadAttachmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="FindBusinessObjectSoapIn">
+    <wsdl:part name="parameters" element="tns:FindBusinessObject" />
+  </wsdl:message>
+  <wsdl:message name="FindBusinessObjectSoapOut">
+    <wsdl:part name="parameters" element="tns:FindBusinessObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="FindSingleBusinessObjectByFieldSoapIn">
+    <wsdl:part name="parameters" element="tns:FindSingleBusinessObjectByField" />
+  </wsdl:message>
+  <wsdl:message name="FindSingleBusinessObjectByFieldSoapOut">
+    <wsdl:part name="parameters" element="tns:FindSingleBusinessObjectByFieldResponse" />
+  </wsdl:message>
+  <wsdl:message name="FindMultipleBusinessObjectsByFieldSoapIn">
+    <wsdl:part name="parameters" element="tns:FindMultipleBusinessObjectsByField" />
+  </wsdl:message>
+  <wsdl:message name="FindMultipleBusinessObjectsByFieldSoapOut">
+    <wsdl:part name="parameters" element="tns:FindMultipleBusinessObjectsByFieldResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSchemaForObjectSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSchemaForObject" />
+  </wsdl:message>
+  <wsdl:message name="GetSchemaForObjectSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSchemaForObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllSchemaForObjectSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllSchemaForObject" />
+  </wsdl:message>
+  <wsdl:message name="GetAllSchemaForObjectSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllSchemaForObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllAllowedObjectNamesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllAllowedObjectNames" />
+  </wsdl:message>
+  <wsdl:message name="GetAllAllowedObjectNamesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllAllowedObjectNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSavedSearchesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSavedSearches" />
+  </wsdl:message>
+  <wsdl:message name="GetSavedSearchesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSavedSearchesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserNamesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserNames" />
+  </wsdl:message>
+  <wsdl:message name="GetUserNamesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRolesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRoles" />
+  </wsdl:message>
+  <wsdl:message name="GetRolesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="RebuildMetaDataIndexSoapIn">
+    <wsdl:part name="parameters" element="tns:RebuildMetaDataIndex" />
+  </wsdl:message>
+  <wsdl:message name="RebuildMetaDataIndexSoapOut">
+    <wsdl:part name="parameters" element="tns:RebuildMetaDataIndexResponse" />
+  </wsdl:message>
+  <wsdl:message name="IntegrationScheduleNowSoapIn">
+    <wsdl:part name="parameters" element="tns:IntegrationScheduleNow" />
+  </wsdl:message>
+  <wsdl:message name="IntegrationScheduleNowSoapOut">
+    <wsdl:part name="parameters" element="tns:IntegrationScheduleNowResponse" />
+  </wsdl:message>
+  <wsdl:portType name="FRSHEATIntegrationSoap">
+    <wsdl:operation name="GetCategories">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return list of categories in the Service Catalog</wsdl:documentation>
+      <wsdl:input message="tns:GetCategoriesSoapIn" />
+      <wsdl:output message="tns:GetCategoriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTemplates">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return full list of Request Offerings</wsdl:documentation>
+      <wsdl:input message="tns:GetAllTemplatesSoapIn" />
+      <wsdl:output message="tns:GetAllTemplatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryTemplates">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return list of Request Offerings, based on the specified category id</wsdl:documentation>
+      <wsdl:input message="tns:GetCategoryTemplatesSoapIn" />
+      <wsdl:output message="tns:GetCategoryTemplatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubscriptionId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return the Id of the Request Offering, based on the supplied name</wsdl:documentation>
+      <wsdl:input message="tns:GetSubscriptionIdSoapIn" />
+      <wsdl:output message="tns:GetSubscriptionIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return the contents of the specified Request Offering</wsdl:documentation>
+      <wsdl:input message="tns:GetPackageDataSoapIn" />
+      <wsdl:output message="tns:GetPackageDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserCanAccessRequestOffering">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Check to see if the given user can access a specific Request Offering</wsdl:documentation>
+      <wsdl:input message="tns:UserCanAccessRequestOfferingSoapIn" />
+      <wsdl:output message="tns:UserCanAccessRequestOfferingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitRequest">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Submit the Service Request</wsdl:documentation>
+      <wsdl:input message="tns:SubmitRequestSoapIn" />
+      <wsdl:output message="tns:SubmitRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRequestData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get the Service Request details</wsdl:documentation>
+      <wsdl:input message="tns:GetRequestDataSoapIn" />
+      <wsdl:output message="tns:GetRequestDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FetchServiceReqValidationListData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Fetch the allowed values for the drop-down list parameter</wsdl:documentation>
+      <wsdl:input message="tns:FetchServiceReqValidationListDataSoapIn" />
+      <wsdl:output message="tns:FetchServiceReqValidationListDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;dl&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Summary&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;retrieves the business object record, using the specified search criteria&lt;/dd&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Parameters&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;sessionKey: &lt;/b&gt;current session key string&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;tenantId: &lt;/b&gt;ID of the tenant in question&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;query: &lt;/b&gt;an ObjectQueryDefinition which expresses the search criteria, for identifying the business object record&lt;/dd&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Return value&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;An FRSHEATIntegrationSearchResponse object, with the matching business objects returned via the objList field in the response object, if successful&lt;/dd&gt;&lt;/dl&gt;</wsdl:documentation>
+      <wsdl:input message="tns:SearchSoapIn" />
+      <wsdl:output message="tns:SearchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchBySavedSearch">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;dl&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Summary&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;retrieves the business object record, using the specified search criteria&lt;/dd&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Parameters&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;sessionKey: &lt;/b&gt;current session key string&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;tenantId: &lt;/b&gt;ID of the tenant in question&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;query: &lt;/b&gt;an ObjectQueryDefinition which expresses the search criteria, for identifying the business object record&lt;/dd&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Return value&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;An FRSHEATIntegrationSearchResponse object, with the matching business objects returned via the objList field in the response object, if successful&lt;/dd&gt;&lt;/dl&gt;</wsdl:documentation>
+      <wsdl:input message="tns:SearchBySavedSearchSoapIn" />
+      <wsdl:output message="tns:SearchBySavedSearchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Connect">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;dl&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Summary&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;authenticates a user with the given tenant id and password&lt;/dd&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Parameters&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;userName: &lt;/b&gt;LoginID of the User&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;password: &lt;/b&gt;User Password&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;tenantId: &lt;/b&gt;ID of the tenant in question&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;role: &lt;/b&gt;name of the role desired&lt;/dd&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Return value&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;An FRSHEATIntegrationConnectionResponse object, with the session key returned via the sessionKey field in the response object, if successful&lt;/dd&gt;&lt;/dl&gt;</wsdl:documentation>
+      <wsdl:input message="tns:ConnectSoapIn" />
+      <wsdl:output message="tns:ConnectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Disconnect">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;dl&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Summary&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;disconnects the user from the tenant&lt;/dd&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Parameters&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;sessionKey: &lt;/b&gt;current session key string&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;tenantId: &lt;/b&gt;ID of the tenant in question&lt;/dd&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Return value&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;An FRSHEATIntegrationConnectionResponse object, with the appropriate status&lt;/dd&gt;&lt;/dl&gt;</wsdl:documentation>
+      <wsdl:input message="tns:DisconnectSoapIn" />
+      <wsdl:output message="tns:DisconnectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;dl&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Summary&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;authenticates a user with the given tenant id and password&lt;/dd&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Parameters&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;userName: &lt;/b&gt;LoginID of the User&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;password: &lt;/b&gt;User Password&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;tenantId: &lt;/b&gt;ID of the tenant in question&lt;/dd&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Return value&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;valid session key on success, or throws an exception on failure&lt;/dd&gt;&lt;/dl&gt;</wsdl:documentation>
+      <wsdl:input message="tns:AuthenticateUserSoapIn" />
+      <wsdl:output message="tns:AuthenticateUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FindQuickActionByName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return QuickActions by Name</wsdl:documentation>
+      <wsdl:input message="tns:FindQuickActionByNameSoapIn" />
+      <wsdl:output message="tns:FindQuickActionByNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateTenantAPIKey">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;dl&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Summary&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;authenticates with the given API-key and tenant id&lt;/dd&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Parameters&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;apiKey: &lt;/b&gt;tenant API-key&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;tenantId: &lt;/b&gt;tenant id or null&lt;/dd&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Return value&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;valid session key on success, or throws an exception on failure&lt;/dd&gt;&lt;/dl&gt;</wsdl:documentation>
+      <wsdl:input message="tns:AuthenticateTenantAPIKeySoapIn" />
+      <wsdl:output message="tns:AuthenticateTenantAPIKeySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRolesForUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;dl&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Summary&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;retrieves the list of roles which are associated with the given user&lt;/dd&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Parameters&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;sessionKey: &lt;/b&gt;current session key string&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;tenantId: &lt;/b&gt;ID of the tenant in question&lt;/dd&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Return value&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;An FRSHEATIntegrationGetRolesResponse object, with the list of roles for the user &lt;br/&gt;returned via the roleList field in the response object, if successful&lt;/dd&gt;&lt;/dl&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetRolesForUserSoapIn" />
+      <wsdl:output message="tns:GetRolesForUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetRoleForUserSession">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;dl&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Summary&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;authenticates the user with respect to a given role, and returns a new session-key for use in later operations&lt;/dd&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Parameters&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;sessionKey: &lt;/b&gt;current session key string&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;tenantId: &lt;/b&gt;ID of the tenant in question&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;roleName: &lt;/b&gt;name of the role desired&lt;/dd&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Return value&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;a new session-key string, or an empty string on error&lt;/dd&gt;&lt;/dl&gt;</wsdl:documentation>
+      <wsdl:input message="tns:SetRoleForUserSessionSoapIn" />
+      <wsdl:output message="tns:SetRoleForUserSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateObject">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;dl&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Summary&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;creates a new business object record, and optionally links to existing related business object records&lt;/dd&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Parameters&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;sessionKey: &lt;/b&gt;current session key string&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;tenantId: &lt;/b&gt;ID of the tenant in question&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;commandData: &lt;/b&gt;The ObjectCommandData object, which stores information regarding the type, fields, &lt;br/&gt;and links to related business object records&lt;/dd&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Return value&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;An FRSHEATIntegrationCreateBOResponse object, with the newly created business object returned via the obj field in the response object, if successful&lt;/dd&gt;&lt;/dl&gt;</wsdl:documentation>
+      <wsdl:input message="tns:CreateObjectSoapIn" />
+      <wsdl:output message="tns:CreateObjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteObject">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;dl&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Summary&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;deletes an existing business object record&lt;/dd&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Parameters&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;sessionKey: &lt;/b&gt;current session key string&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;tenantId: &lt;/b&gt;ID of the tenant in question&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;commandData: &lt;/b&gt;the ObjectCommandData object, which stores information regarding the recid and type  &lt;br/&gt;of the business object record to delete&lt;/dd&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Return value&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;An FRSHEATIntegrationDeleteBOResponse object&lt;/dd&gt;&lt;/dl&gt;</wsdl:documentation>
+      <wsdl:input message="tns:DeleteObjectSoapIn" />
+      <wsdl:output message="tns:DeleteObjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateObject">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;dl&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Summary&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;updates an existing business object record, and optionally links / unlinks to existing related business object records&lt;/dd&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Parameters&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;sessionKey: &lt;/b&gt;current session key string&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;tenantId: &lt;/b&gt;ID of the tenant in question&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;commandData: &lt;/b&gt;the ObjectCommandData object, which stores information regarding the type, fields, &lt;br/&gt;and links to related business object records&lt;/dd&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Return value&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;An FRSHEATIntegrationUpdateBOResponse object, with the updated business object returned via the obj field in the response object, if successful&lt;/dd&gt;&lt;/dl&gt;</wsdl:documentation>
+      <wsdl:input message="tns:UpdateObjectSoapIn" />
+      <wsdl:output message="tns:UpdateObjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpsertObject">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;dl&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Summary&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;creates or updates a business object record, and optionally links to existing related business object records. Race condition safe.&lt;/dd&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Parameters&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;sessionKey: &lt;/b&gt;current session key string&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;tenantId: &lt;/b&gt;ID of the tenant in question&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;commandData: &lt;/b&gt;The ObjectCommandData object, which stores information regarding the type, fields, &lt;br/&gt;and links to related business object records&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;searchFields: &lt;/b&gt;array of field names used to search for an existing object. If null, unique fields are used&lt;/dd&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Return value&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;An FRSHEATIntegrationUpsertBOResponse object, with the newly created business object returned via the obj field in the response object, if successful&lt;/dd&gt;&lt;/dl&gt;</wsdl:documentation>
+      <wsdl:input message="tns:UpsertObjectSoapIn" />
+      <wsdl:output message="tns:UpsertObjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAttachment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;dl&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Summary&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;adds an attachment to an existing business object record&lt;/dd&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Parameters&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;sessionKey: &lt;/b&gt;current session key string&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;tenantId: &lt;/b&gt;ID of the tenant in question&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;commandData: &lt;/b&gt;an ObjectAttachmentCommandData object, which stores the RecId of the &lt;br/&gt;parent business object record, its type, name of the file to be attached, and the actual &lt;br/&gt;fileData as a byte array&lt;/dd&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Return value&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;An FRSHEATIntegrationAddAttachmentResponse object&lt;/dd&gt;&lt;/dl&gt;</wsdl:documentation>
+      <wsdl:input message="tns:AddAttachmentSoapIn" />
+      <wsdl:output message="tns:AddAttachmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadAttachment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;dl&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Summary&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;retrieves the attachment for an existing business object record, as a byte array&lt;/dd&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Parameters&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;sessionKey: &lt;/b&gt;current session key string&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;tenantId: &lt;/b&gt;ID of the tenant in question&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;commandData: &lt;/b&gt;an ObjectAttachmentCommandData object, which stores the RecId of the &lt;br/&gt;parent business object record, its type, name of the file to be attached, and the actual &lt;br/&gt;fileData as a byte array&lt;/dd&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Return value&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;An FRSHEATIntegrationReadAttachmentResponse object, with the attachment data returned via the attachmentData byte array in the response object, if successful&lt;/dd&gt;&lt;/dl&gt;</wsdl:documentation>
+      <wsdl:input message="tns:ReadAttachmentSoapIn" />
+      <wsdl:output message="tns:ReadAttachmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FindBusinessObject">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;dl&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Summary&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;retrieves the business object record, based on the specified RecId value&lt;/dd&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Parameters&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;sessionKey: &lt;/b&gt;current session key string&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;tenantId: &lt;/b&gt;ID of the tenant in question&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;boType: &lt;/b&gt;The name of the business object (e.g. "Incident"). It is not necessary to use &lt;br/&gt;  the Object Reference Notation here.&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;recId: &lt;/b&gt;RecId of the record for the business object&lt;dt&gt;&lt;i&gt;&lt;b&gt;Return value&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;An FRSHEATIntegrationFindBOResponse object, with the matching business object returned via the obj field in the response object, if successful&lt;/dd&gt;&lt;/dl&gt;</wsdl:documentation>
+      <wsdl:input message="tns:FindBusinessObjectSoapIn" />
+      <wsdl:output message="tns:FindBusinessObjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FindSingleBusinessObjectByField">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;dl&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Summary&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;retrieves the business object record, based on the specified RecId value&lt;/dd&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Parameters&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;sessionKey: &lt;/b&gt;current session key string&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;tenantId: &lt;/b&gt;ID of the tenant in question&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;boType: &lt;/b&gt;The name of the business object (e.g. "Incident"). It is not necessary to use &lt;br/&gt;  the Object Reference Notation here.&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;recId: &lt;/b&gt;RecId of the record for the business object&lt;dt&gt;&lt;i&gt;&lt;b&gt;Return value&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;An FRSHEATIntegrationFindBOResponse object, with the matching business object returned via the obj field in the response object, if successful&lt;/dd&gt;&lt;/dl&gt;</wsdl:documentation>
+      <wsdl:input message="tns:FindSingleBusinessObjectByFieldSoapIn" />
+      <wsdl:output message="tns:FindSingleBusinessObjectByFieldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FindMultipleBusinessObjectsByField">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;dl&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Summary&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;retrieves the business object record, based on the specified RecId value&lt;/dd&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Parameters&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;sessionKey: &lt;/b&gt;current session key string&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;tenantId: &lt;/b&gt;ID of the tenant in question&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;boType: &lt;/b&gt;The name of the business object (e.g. "Incident"). It is not necessary to use &lt;br/&gt;  the Object Reference Notation here.&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;recId: &lt;/b&gt;RecId of the record for the business object&lt;dt&gt;&lt;i&gt;&lt;b&gt;Return value&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;An FRSHEATIntegrationSearchResponse object, with the matching business objects returned via the objList field in the response object, if successful&lt;/dd&gt;&lt;/dl&gt;</wsdl:documentation>
+      <wsdl:input message="tns:FindMultipleBusinessObjectsByFieldSoapIn" />
+      <wsdl:output message="tns:FindMultipleBusinessObjectsByFieldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSchemaForObject">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;dl&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Summary&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;retrieves the schema for a business object, as an XML string. &lt;br/&gt;This web method will screen out system fields such as RecId.&lt;/dd&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Parameters&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;sessionKey: &lt;/b&gt;current session key string&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;tenantId: &lt;/b&gt;ID of the tenant in question&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;objectName: &lt;/b&gt;Name of the business object, in object reference notation (e.g. "Incident#")&lt;/dd&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Return value&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;the schema for the specified business object, as an XML string&lt;/dd&gt;&lt;/dl&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetSchemaForObjectSoapIn" />
+      <wsdl:output message="tns:GetSchemaForObjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSchemaForObject">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;dl&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Summary&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;retrieves the full schema for a business object (including fields such as RecId), as an XML string&lt;/dd&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Parameters&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;sessionKey: &lt;/b&gt;current session key string&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;tenantId: &lt;/b&gt;ID of the tenant in question&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;objectName: &lt;/b&gt;Name of the business object, in object reference notation (e.g. "Incident#")&lt;/dd&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Return value&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;the schema for the specified business object, as an XML string&lt;/dd&gt;&lt;/dl&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetAllSchemaForObjectSoapIn" />
+      <wsdl:output message="tns:GetAllSchemaForObjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAllowedObjectNames">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;dl&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Summary&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;retrieves the list of names of all business objects, available in the tenant&lt;/dd&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Parameters&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;sessionKey: &lt;/b&gt;current session key string&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;tenantId: &lt;/b&gt;ID of the tenant in question&lt;/dd&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Return value&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;an array of string values, corresponding to the names of the business objects in the tenant&lt;/dd&gt;&lt;/dl&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetAllAllowedObjectNamesSoapIn" />
+      <wsdl:output message="tns:GetAllAllowedObjectNamesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSavedSearches">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return list of saved searches</wsdl:documentation>
+      <wsdl:input message="tns:GetSavedSearchesSoapIn" />
+      <wsdl:output message="tns:GetSavedSearchesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserNames">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return list of user names</wsdl:documentation>
+      <wsdl:input message="tns:GetUserNamesSoapIn" />
+      <wsdl:output message="tns:GetUserNamesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoles">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return list of roles</wsdl:documentation>
+      <wsdl:input message="tns:GetRolesSoapIn" />
+      <wsdl:output message="tns:GetRolesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RebuildMetaDataIndex">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;dl&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Summary&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;repopulates the MetaData Reverse Index for the given tenant&lt;/dd&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Parameters&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;userName: &lt;/b&gt;LoginID of the User&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;password: &lt;/b&gt;User Password&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;tenantId: &lt;/b&gt;ID of the tenant in question&lt;/dd&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Return value&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;list of errors encountered&lt;/dd&gt;&lt;/dl&gt;</wsdl:documentation>
+      <wsdl:input message="tns:RebuildMetaDataIndexSoapIn" />
+      <wsdl:output message="tns:RebuildMetaDataIndexSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IntegrationScheduleNow">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;dl&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Summary&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;Run an Integration Job&lt;/dd&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Parameters&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;&lt;b&gt;sessionKey: &lt;/b&gt;The session key&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;tenantId: &lt;/b&gt;The tenant ID (tenant URL)&lt;/dd&gt;&lt;dd&gt;&lt;b&gt;integrationName: &lt;/b&gt;The Integration definition name&lt;/dd&gt;&lt;dt&gt;&lt;i&gt;&lt;b&gt;Return value&lt;/b&gt;&lt;/i&gt;&lt;/dt&gt;&lt;dd&gt;An FRSHEATIntegrationScheduleNowResponse object&lt;/dd&gt;&lt;/dl&gt;</wsdl:documentation>
+      <wsdl:input message="tns:IntegrationScheduleNowSoapIn" />
+      <wsdl:output message="tns:IntegrationScheduleNowSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FRSHEATIntegrationSoap" type="tns:FRSHEATIntegrationSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCategories">
+      <soap:operation soapAction="SaaS.Services/GetCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTemplates">
+      <soap:operation soapAction="SaaS.Services/GetAllTemplates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryTemplates">
+      <soap:operation soapAction="SaaS.Services/GetCategoryTemplates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubscriptionId">
+      <soap:operation soapAction="SaaS.Services/GetSubscriptionId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageData">
+      <soap:operation soapAction="SaaS.Services/GetPackageData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserCanAccessRequestOffering">
+      <soap:operation soapAction="SaaS.Services/UserCanAccessRequestOffering" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitRequest">
+      <soap:operation soapAction="SaaS.Services/SubmitRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRequestData">
+      <soap:operation soapAction="SaaS.Services/GetRequestData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchServiceReqValidationListData">
+      <soap:operation soapAction="SaaS.Services/FetchServiceReqValidationListData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <soap:operation soapAction="SaaS.Services/Search" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchBySavedSearch">
+      <soap:operation soapAction="SaaS.Services/SearchBySavedSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Connect">
+      <soap:operation soapAction="SaaS.Services/Connect" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Disconnect">
+      <soap:operation soapAction="SaaS.Services/Disconnect" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUser">
+      <soap:operation soapAction="SaaS.Services/AuthenticateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindQuickActionByName">
+      <soap:operation soapAction="SaaS.Services/FindQuickActionByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateTenantAPIKey">
+      <soap:operation soapAction="SaaS.Services/AuthenticateTenantAPIKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRolesForUser">
+      <soap:operation soapAction="SaaS.Services/GetRolesForUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetRoleForUserSession">
+      <soap:operation soapAction="SaaS.Services/SetRoleForUserSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateObject">
+      <soap:operation soapAction="SaaS.Services/CreateObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteObject">
+      <soap:operation soapAction="SaaS.Services/DeleteObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateObject">
+      <soap:operation soapAction="SaaS.Services/UpdateObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpsertObject">
+      <soap:operation soapAction="SaaS.Services/UpsertObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAttachment">
+      <soap:operation soapAction="SaaS.Services/AddAttachment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadAttachment">
+      <soap:operation soapAction="SaaS.Services/ReadAttachment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindBusinessObject">
+      <soap:operation soapAction="SaaS.Services/FindBusinessObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindSingleBusinessObjectByField">
+      <soap:operation soapAction="SaaS.Services/FindSingleBusinessObjectByField" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindMultipleBusinessObjectsByField">
+      <soap:operation soapAction="SaaS.Services/FindMultipleBusinessObjectsByField" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSchemaForObject">
+      <soap:operation soapAction="SaaS.Services/GetSchemaForObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSchemaForObject">
+      <soap:operation soapAction="SaaS.Services/GetAllSchemaForObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAllowedObjectNames">
+      <soap:operation soapAction="SaaS.Services/GetAllAllowedObjectNames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSavedSearches">
+      <soap:operation soapAction="SaaS.Services/GetSavedSearches" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserNames">
+      <soap:operation soapAction="SaaS.Services/GetUserNames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoles">
+      <soap:operation soapAction="SaaS.Services/GetRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RebuildMetaDataIndex">
+      <soap:operation soapAction="SaaS.Services/RebuildMetaDataIndex" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IntegrationScheduleNow">
+      <soap:operation soapAction="SaaS.Services/IntegrationScheduleNow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FRSHEATIntegrationSoap12" type="tns:FRSHEATIntegrationSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCategories">
+      <soap12:operation soapAction="SaaS.Services/GetCategories" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTemplates">
+      <soap12:operation soapAction="SaaS.Services/GetAllTemplates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryTemplates">
+      <soap12:operation soapAction="SaaS.Services/GetCategoryTemplates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubscriptionId">
+      <soap12:operation soapAction="SaaS.Services/GetSubscriptionId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageData">
+      <soap12:operation soapAction="SaaS.Services/GetPackageData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserCanAccessRequestOffering">
+      <soap12:operation soapAction="SaaS.Services/UserCanAccessRequestOffering" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitRequest">
+      <soap12:operation soapAction="SaaS.Services/SubmitRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRequestData">
+      <soap12:operation soapAction="SaaS.Services/GetRequestData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchServiceReqValidationListData">
+      <soap12:operation soapAction="SaaS.Services/FetchServiceReqValidationListData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <soap12:operation soapAction="SaaS.Services/Search" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchBySavedSearch">
+      <soap12:operation soapAction="SaaS.Services/SearchBySavedSearch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Connect">
+      <soap12:operation soapAction="SaaS.Services/Connect" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Disconnect">
+      <soap12:operation soapAction="SaaS.Services/Disconnect" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUser">
+      <soap12:operation soapAction="SaaS.Services/AuthenticateUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindQuickActionByName">
+      <soap12:operation soapAction="SaaS.Services/FindQuickActionByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateTenantAPIKey">
+      <soap12:operation soapAction="SaaS.Services/AuthenticateTenantAPIKey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRolesForUser">
+      <soap12:operation soapAction="SaaS.Services/GetRolesForUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetRoleForUserSession">
+      <soap12:operation soapAction="SaaS.Services/SetRoleForUserSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateObject">
+      <soap12:operation soapAction="SaaS.Services/CreateObject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteObject">
+      <soap12:operation soapAction="SaaS.Services/DeleteObject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateObject">
+      <soap12:operation soapAction="SaaS.Services/UpdateObject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpsertObject">
+      <soap12:operation soapAction="SaaS.Services/UpsertObject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAttachment">
+      <soap12:operation soapAction="SaaS.Services/AddAttachment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadAttachment">
+      <soap12:operation soapAction="SaaS.Services/ReadAttachment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindBusinessObject">
+      <soap12:operation soapAction="SaaS.Services/FindBusinessObject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindSingleBusinessObjectByField">
+      <soap12:operation soapAction="SaaS.Services/FindSingleBusinessObjectByField" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindMultipleBusinessObjectsByField">
+      <soap12:operation soapAction="SaaS.Services/FindMultipleBusinessObjectsByField" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSchemaForObject">
+      <soap12:operation soapAction="SaaS.Services/GetSchemaForObject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSchemaForObject">
+      <soap12:operation soapAction="SaaS.Services/GetAllSchemaForObject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAllowedObjectNames">
+      <soap12:operation soapAction="SaaS.Services/GetAllAllowedObjectNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSavedSearches">
+      <soap12:operation soapAction="SaaS.Services/GetSavedSearches" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserNames">
+      <soap12:operation soapAction="SaaS.Services/GetUserNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoles">
+      <soap12:operation soapAction="SaaS.Services/GetRoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RebuildMetaDataIndex">
+      <soap12:operation soapAction="SaaS.Services/RebuildMetaDataIndex" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IntegrationScheduleNow">
+      <soap12:operation soapAction="SaaS.Services/IntegrationScheduleNow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FRSHEATIntegration">
+    <wsdl:port name="FRSHEATIntegrationSoap" binding="tns:FRSHEATIntegrationSoap">
+      <soap:address location="http://yrdsbheatdev01.yrdsb.yrdsb.net/HEAT/ServiceAPI/FRSHEATIntegration.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FRSHEATIntegrationSoap12" binding="tns:FRSHEATIntegrationSoap12">
+      <soap12:address location="http://yrdsbheatdev01.yrdsb.yrdsb.net/HEAT/ServiceAPI/FRSHEATIntegration.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
