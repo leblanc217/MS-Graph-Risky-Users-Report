@@ -18,8 +18,9 @@ $more = $true
 #Disable user AD Account, add reason to accounts description
 Function DisableAccount($upn) 
 {
+	$server=""
         $filter = "UserPrincipalName -eq '{0}'" -f $upn    
-        $aduser = Get-ADUser -Filter $filter -Server [redacted]:3268 -Properties UserPrincipalName,Description,ObjectGUID 
+        $aduser = Get-ADUser -Filter $filter -Server "$server:3268" -Properties UserPrincipalName,Description,ObjectGUID 
 
         if($aduser -ne "" -and $aduser -ne $null)
         {
